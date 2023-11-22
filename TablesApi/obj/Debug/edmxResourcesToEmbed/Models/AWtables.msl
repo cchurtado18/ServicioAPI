@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NWModelStoreContainer" CdmEntityContainer="NWEntities">
+    <EntitySetMapping Name="Region">
+      <EntityTypeMapping TypeName="NWModel.Region">
+        <MappingFragment StoreEntitySet="Region">
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="RegionDescription" ColumnName="RegionDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shippers">
+      <EntityTypeMapping TypeName="NWModel.Shippers">
+        <MappingFragment StoreEntitySet="Shippers">
+          <ScalarProperty Name="ShipperID" ColumnName="ShipperID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Territories">
+      <EntityTypeMapping TypeName="NWModel.Territories">
+        <MappingFragment StoreEntitySet="Territories">
+          <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
+          <ScalarProperty Name="TerritoryDescription" ColumnName="TerritoryDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_Territories_Region" TypeName="NWModel.FK_Territories_Region" StoreEntitySet="Territories">
+      <EndProperty Name="Region">
+        <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+      </EndProperty>
+      <EndProperty Name="Territories">
+        <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

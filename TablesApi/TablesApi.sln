@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TablesApi", "TablesApi.csproj", "{ED6008C0-0EE9-4936-9876-A801759F062B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TablesMvc", "..\TablesMvc\TablesMvc.csproj", "{14A5478B-8253-4453-B881-7AE4A420A2A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED6008C0-0EE9-4936-9876-A801759F062B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED6008C0-0EE9-4936-9876-A801759F062B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED6008C0-0EE9-4936-9876-A801759F062B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED6008C0-0EE9-4936-9876-A801759F062B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14A5478B-8253-4453-B881-7AE4A420A2A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14A5478B-8253-4453-B881-7AE4A420A2A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14A5478B-8253-4453-B881-7AE4A420A2A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14A5478B-8253-4453-B881-7AE4A420A2A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D0C8893-A8F9-4CFD-9D9B-F48F61E793D8}
+	EndGlobalSection
+EndGlobal

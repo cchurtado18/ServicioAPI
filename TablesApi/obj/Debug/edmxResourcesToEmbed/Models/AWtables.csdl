@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NWModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="RegionID" />
+    </Key>
+    <Property Name="RegionID" Type="Int32" Nullable="false" />
+    <Property Name="RegionDescription" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Territories" Relationship="Self.FK_Territories_Region" FromRole="Region" ToRole="Territories" />
+  </EntityType>
+  <EntityType Name="Shippers">
+    <Key>
+      <PropertyRef Name="ShipperID" />
+    </Key>
+    <Property Name="ShipperID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Territories">
+    <Key>
+      <PropertyRef Name="TerritoryID" />
+    </Key>
+    <Property Name="TerritoryID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TerritoryDescription" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Region" Relationship="Self.FK_Territories_Region" FromRole="Territories" ToRole="Region" />
+  </EntityType>
+  <Association Name="FK_Territories_Region">
+    <End Role="Region" Type="Self.Region" Multiplicity="1" />
+    <End Role="Territories" Type="Self.Territories" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="NWEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Region" EntityType="Self.Region" />
+    <EntitySet Name="Shippers" EntityType="Self.Shippers" />
+    <EntitySet Name="Territories" EntityType="Self.Territories" />
+    <AssociationSet Name="FK_Territories_Region" Association="Self.FK_Territories_Region">
+      <End Role="Region" EntitySet="Region" />
+      <End Role="Territories" EntitySet="Territories" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

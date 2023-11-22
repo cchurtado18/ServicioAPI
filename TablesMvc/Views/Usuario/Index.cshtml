@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Pagina de productos";
+}
+
+<style>
+    #dt-records tbody th, #dt-records tbody td {
+        padding: 0.25rem !important;
+        line-height: 1.3em !important;
+        vertical-align: middle !important;
+    }
+
+    #btnnuevo {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="br-section-wrapper">
+
+    <button id="btnnuevo" class="btn btn-primary" data-target="#modal-record"><i class="fa fa-plus" aria-hidden="true"></i> Nuevo</button>
+
+    <table id="dt-records" class="table-wrapper table display responsive nowrap table-hover" style="width:100%" data-page-length='10'>
+        <thead class="thead-colored thead-primary">
+            <tr>
+                <th>IdUsuario</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Ciudad</th>
+                <th>Edit/Delete</th>
+
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<div id="modal-record" class="modal" role="dialog">
+    <div class="modal-dialog" style="width: 400px !important;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Direcciones AW</h3>
+            </div>
+            <div class="modal-body">
+                <form id="NewRecord" role="form">
+                    <div>
+                        <div class="form-group">
+                            <label for="txtIdUsuario" class="control-label">IdUsuario</label>
+                            <input type="text" id="txtIdUsuario" class="form-control" placeholder="IdUsuario" />
+                        </div>
+                        <div class="form-group">
+                            <label for="txtNombre" class="control-label">Nombre</label>
+                            <input type="text" id="txtNombre" class="form-control" placeholder="Nombre del usuario" />
+                        </div>
+                        <div class="form-group">
+                            <label for="txtApellido" class="control-label">Apellido</label>
+                            <input type="text" id="txtApellido" class="form-control" placeholder="Apellido" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Ciudad" class="control-label">Ciudad</label>
+                            <input type="text" id="txtCiudad" class="form-control" placeholder="Ciudad" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btnguardar" data-dismiss="modal" class="btn btn-primary">Guardar</button>
+                        <button id="btncerrar" data-dismiss="modal" class="btn btn-danger">Cerrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/Usuario.js"></script>
